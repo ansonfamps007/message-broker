@@ -1,0 +1,20 @@
+spring:
+  application: 
+    name: message-broker
+  jackson: 
+    property-naming-strategy : LOWER_CAMEL_CASE
+    serialization:
+      fail-on-empty-beans: false
+  kafka:
+    producer:
+      bootstrap-servers:
+      - localhost:29092,localhost:39092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  
+server:
+    port: ${API_PORT:9092}
+
+logging:
+  level: 
+    '[com.ansapp]': debug
