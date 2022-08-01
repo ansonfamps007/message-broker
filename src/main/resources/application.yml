@@ -11,6 +11,8 @@ spring:
       - localhost:29092,localhost:39092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      retries: 3
+      acks: 1
   
 server:
     port: ${API_PORT:9092}
